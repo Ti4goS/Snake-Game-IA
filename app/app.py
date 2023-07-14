@@ -1,6 +1,6 @@
 import pygame
 import random
-from arguments import Color
+from const import Color
 from game import GameConstants, Screen
 
 X = 0
