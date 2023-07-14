@@ -40,48 +40,59 @@ Após isso, para ativar o ambiente virtual utilize o seguinte comando:
 
 ##### Canto superior esquerdo (0,0)
 
-> successors = [
->   (i,j+20), #Down
->   (i+20,j)  #Right
->]
+'''
+ successors = [
+   (i,j+20), #Down
+   (i+20,j)  #Right
+]
+'''
 
 ##### Canto superior direito (600,0)
 
-> successors = [
->   (i,j+20), #Down
->   (i-20,j)  #Left
->]
+'''
+ successors = [
+   (i,j+20), #Down
+   (i-20,j)  #Left
+]
+''''
 
 ##### Canto inferior esquerdo (0,600)
 
-> successors = [
->   (i,j-20), #Up
->   (i+20,j)  #Right
->]
+'''
+ successors = [
+   (i,j-20), #Up
+   (i+20,j)  #Right
+]
+'''
 
 ##### Canto inferior direito (400,600)
 
-> successors = [
->   (i,j-20), #Up
->   (i-20,j)  #Left
->]
-
+'''
+ successors = [
+   (i,j-20), #Up
+   (i-20,j)  #Left
+]
+'''
 3. Quando a Cobra estiver em outra posição ela tem 4 jogadas possiveis
 
-> successors = [
->   (i,j-20), #Up
->   (i,j+20), #Down
->   (i-20,j), #Left
->   (i+20,j)  #Right
->]
+'''
+ successors = [
+   (i,j-20), #Up
+   (i,j+20), #Down
+   (i-20,j), #Left
+   (i+20,j)  #Right
+]
+'''
 
 #### Para cada um desses sucessores deve ser verificado, se:
 
 - O Sucessor está dentro do vetor snake_list, ou seja, se é de onde a cobra está vindo;
 - O Sucessor está dentro do tabuleiro do jogo:
 
-> Se Sucessor X é maior ou igual a 0 ou é menor que 600
-> Se Sucessor Y é maior ou igual a 0 ou é menor que 400
+'''
+ Se Sucessor X é maior ou igual a 0 ou é menor que 600
+ Se Sucessor Y é maior ou igual a 0 ou é menor que 400
+'''
 
 #### Funções
 
@@ -93,16 +104,15 @@ Após isso, para ativar o ambiente virtual utilize o seguinte comando:
 ela será calculada utilizando o teorema de pitágoras (distancia em linha reta): 
 
 '''
-import math
-
-...
+    import math
+    
     x_axis_delta = math.pow(snake_x_coordinate - food_x_coordinate,2) 
     y_axis_delta = math.pow(snake_y_coordinate - food_y_coordinate,2)
 
     function_h = math.sqrt(
         x_axis_delta + y_axis_delta
     )
-...
+
 '''
 
 - Função G
