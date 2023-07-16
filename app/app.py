@@ -123,10 +123,10 @@ def gameLoop():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
-            if event.type == pygame.KEYDOWN:
-                changes = singleplayer_commands(event)
+            #if event.type == pygame.KEYDOWN:
+            #    changes = singleplayer_commands(event)
 
-        #changes = run_a_star(snake_Head)
+        changes = run_a_star(snake_Head,snake_List,food_coordinates)
         #print('Snake Head:\n' + str(snake_Head) + '\nSnake List:\n' + str(snake_List))
 
         snake_coordinates[X] += changes[X]
