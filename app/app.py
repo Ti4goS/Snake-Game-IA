@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 from const import Color
 from game import GameConstants, Screen
 
@@ -81,6 +82,14 @@ def update_snake_head(coordinates):
     head.append(coordinates[X])
     head.append(coordinates[Y])
     return head
+
+def heuristic_g(coordinates, food):
+    x_axis_delta = math.pow(coordinates[X] - food[X], 2)
+    y_axis_delta = math.pow(coordinates[Y], food[Y])
+
+    function_h = math.sqrt(x_axis_delta + y_axis_delta)
+
+    return function_h + 1
 
 def gameLoop():
     game_over = False
