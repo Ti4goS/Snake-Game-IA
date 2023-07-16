@@ -1,5 +1,5 @@
 import pygame
-from arguments import Color
+from const import Color
 
 class Screen:
     def __init__(self,game_info) -> None:

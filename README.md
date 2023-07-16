@@ -47,7 +47,7 @@ Após isso, para ativar o ambiente virtual utilize o seguinte comando:
 ]
 ```
 
-##### Canto superior direito (600,0)
+##### Canto superior direito (580,0)
 
 ```
  successors = [
@@ -56,7 +56,7 @@ Após isso, para ativar o ambiente virtual utilize o seguinte comando:
 ]
 ```
 
-##### Canto inferior esquerdo (0,600)
+##### Canto inferior esquerdo (0,380)
 
 ```
  successors = [
@@ -65,7 +65,7 @@ Após isso, para ativar o ambiente virtual utilize o seguinte comando:
 ]
 ```
 
-##### Canto inferior direito (400,600)
+##### Canto inferior direito (580,380)
 
 ```
  successors = [

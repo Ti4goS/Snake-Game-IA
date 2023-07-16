@@ -1,8 +1,9 @@
+
 import pygame
 import random
 import math
 from const import Color
-from game import GameConstants, Screen
+from game import GameConstants, Screen, run_a_star
 
 X = 0
 Y = 1
@@ -83,13 +84,6 @@ def update_snake_head(coordinates):
     head.append(coordinates[Y])
     return head
 
-def heuristic_g(coordinates, food):
-    x_axis_delta = math.pow(coordinates[X] - food[X], 2)
-    y_axis_delta = math.pow(coordinates[Y], food[Y])
-
-    function_h = math.sqrt(x_axis_delta + y_axis_delta)
-
-    return function_h + 1
 
 def gameLoop():
     game_over = False
@@ -132,7 +126,9 @@ def gameLoop():
             if event.type == pygame.KEYDOWN:
                 changes = singleplayer_commands(event)
 
+        #changes = run_a_star(snake_Head)
         #print('Snake Head:\n' + str(snake_Head) + '\nSnake List:\n' + str(snake_List))
+
         snake_coordinates[X] += changes[X]
         snake_coordinates[Y] += changes[Y]
 
@@ -164,8 +160,7 @@ def gameLoop():
             food_coordinates = get_random_spot(snake_List)
             length_of_snake += 1
 
-        game_info.game_clock.tick(game_info.FPS)
-
+        game_info.game_clock.tick(15)
     pygame.quit()
     quit()
 
